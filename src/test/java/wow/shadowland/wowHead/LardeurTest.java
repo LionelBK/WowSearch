@@ -13,8 +13,6 @@ import pageObject.PageItem;
 import pageObject.PagePnj;
 import pageObject.PageSearchResult;
 
-import static org.junit.Assert.*;
-
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
