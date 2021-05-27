@@ -55,13 +55,6 @@ public class LardeurTest {
 		
 		PagePnj paPnj = pageSearchResult.clickLienBoss(driver);
 		
-		"Épaule Plaques
-		Armure : 10
-		+12 [Force or Intelligence]
-		+18 Endurance
-		Augmente votre score de coup critique de +9 (0.26% au niveau 70)
-		+15 Versatilité (0.38% au niveau 70)
-		Durabilité 80 / 80"
 		
 		List <WebElement> listItemsBoss = paPnj.getListItemsBoss();
 		for(int i=0; i!=listItemsBoss.size();i++) {
