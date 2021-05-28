@@ -21,7 +21,8 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class LardeurTest {
-
+	
+	private String BROWSER=System.getProperty("browser");
 	String stSearch= "Lardeur";
 	protected static WebDriver driver;
 	protected WebDriverWait wait;
@@ -34,12 +35,21 @@ public class LardeurTest {
 	
 	@Test
 	public void run() throws InterruptedException{
-		File file = getFileAsResource("src/main/resources/driver/chromedriver.exe");
 
-		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
-		ChromeOptions options = new ChromeOptions();
-		options.setCapability("chrome.switches", Arrays.asList("--ignore-certificate-errors"));
-		driver = new ChromeDriver(options);
+		if(BROWSER.equals("firefox")) {
+			
+			File file = getFileAsResource("src/main/resources/driver/geckodriver.exe");
+			
+		}else if(BROWSER.equals("chrome")) {
+			
+			File file = getFileAsResource("src/main/resources/driver/chromedriver.exe");
+			
+			System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
+			ChromeOptions options = new ChromeOptions();
+			options.setCapability("chrome.switches", Arrays.asList("--ignore-certificate-errors"));
+			driver = new ChromeDriver(options);
+		}
+		
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.get("https://fr.wowhead.com");
 		PageAcceuil pageAcceuil = PageFactory.initElements(driver, PageAcceuil.class);
