@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObject.PageAcceuil;
@@ -40,6 +41,7 @@ public class LardeurTest {
 		if(BROWSER.equals("firefox")) {
 			
 			File file = getFileAsResource("src/main/resources/driver/geckodriver.exe");
+			driver = new FirefoxDriver();
 			
 		}else if(BROWSER.equals("chrome")) {
 			
