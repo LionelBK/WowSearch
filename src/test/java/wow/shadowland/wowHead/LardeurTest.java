@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 
 public class LardeurTest {
 	
-	private String BROWSER=System.getProperty("browser");
+	
 	String stSearch= "Lardeur";
 	protected static WebDriver driver;
 	protected WebDriverWait wait;
@@ -35,6 +35,7 @@ public class LardeurTest {
 	
 	@Test
 	public void run() throws InterruptedException{
+		String BROWSER=System.getProperty("browser");
 
 		if(BROWSER.equals("firefox")) {
 			
