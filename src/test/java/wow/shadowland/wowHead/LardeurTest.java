@@ -41,6 +41,7 @@ public class LardeurTest {
 		if(BROWSER.equals("firefox")) {
 			
 			File file = getFileAsResource("src/main/resources/driver/geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", file.getAbsolutePath());
 			driver = new FirefoxDriver();
 			
 		}else if(BROWSER.equals("chrome")) {
